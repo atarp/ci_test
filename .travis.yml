@@ -1,12 +1,12 @@
-dist:	bionic
+dist: bionic
 
 language: cpp
 compiler:
-    clang
-    gcc
+  - clang
+  - gcc
     
 script:
-    cmake .
-    cmake --build . -- -j2
+  - cmake .
+  - cmake --build . -- -j2
 
     
