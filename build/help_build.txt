@@ -1,0 +1,17 @@
+
+~/.conan/profiles/default editieren z.B. libstdc++11
+
+conanfile.txt mit generator und requiries erstellen
+
+cd build/
+
+conan install ..
+
+../CMakeLists.txt editieren / anpassen
+	      
+
+cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
+cmake --build .
+./bin/md5
+
+	    
