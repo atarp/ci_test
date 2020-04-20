@@ -1,4 +1,5 @@
 #https://riptutorial.com/cmake/example/4723/configure-travis-ci-with-newest-cmake
+dist: bionic
 language: cpp
 
 compiler:
