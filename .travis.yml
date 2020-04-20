@@ -1,18 +1,14 @@
-dist: trusty
-
-language: cpp 
-compiler: gcc
-
-matrix:
-  include:
-    # works on Precise and Trusty
-    - os: linux   
-addons: 
-    apt: 
-    sources: 
-    - ubuntu-toolchain-r-test 
+language: cpp
+sudo: required
+dist: bionic
+compiler:
+- g++
+os:
+- linux
+before_install:
+- sudo apt-get update
+- sudo apt-get install -y libpoco-dev
 script:
-    - cmake .
-    - cmake --build . 
- 
+- g++ -c -std=c++14 md5.c -o md5.o 
+- g++ -std=c++14 md5.o -o md5 -lPocoFoundation
 
