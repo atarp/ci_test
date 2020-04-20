@@ -11,7 +11,7 @@ add_compile_options(-Wall -Wextra -Wpedantic)
 #add_executable(intro md5.cpp)
 
 add_executable(md5 md5.cpp)
-target_link_libraries(md5 ${CONAN_LIBS})
+target_link_libraries(md5 ${CONAN_LIBS} PocoFoundation )
 
 #target_compile_features(intro PRIVATE cxx_lambda_init_captures)
 #target_link_libraries(intro PRIVATE project_options project_warnings CONAN_PKG::docopt.cpp CONAN_PKG::fmt CONAN_PKG::spdlog)
