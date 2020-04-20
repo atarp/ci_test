@@ -17,8 +17,3 @@ env:
 before_install:
     - eval "${MATRIX_EVAL}"
     
-script:
-   - cd build/
-   - cmake .
-   - cmake --build . 
-
