@@ -3,7 +3,8 @@ dist: trusty
 language: 
   - cpp 
 compiler: 
-  - gcc 
+  - gcc
+   
 addons: 
     apt: 
     sources: 
@@ -11,6 +12,6 @@ addons:
     packages: 
     - g++-7
 script:
-   - CXX=/usr/bin/g++-7 CC=/usr/bin/gcc-7 cmake .
+   - cmake .
    - cmake --build . -- -j2
 
