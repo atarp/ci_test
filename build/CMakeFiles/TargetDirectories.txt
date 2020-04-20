@@ -1,3 +1,0 @@
-/home/atarp/projects/turner/simple_test/build/CMakeFiles/rebuild_cache.dir
-/home/atarp/projects/turner/simple_test/build/CMakeFiles/md5.dir
-/home/atarp/projects/turner/simple_test/build/CMakeFiles/edit_cache.dir
