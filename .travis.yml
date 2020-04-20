@@ -1,10 +1,12 @@
 dist: trusty
 
-language: 
-  - cpp 
-compiler: 
-  - gcc
-   
+language: cpp 
+compiler: gcc
+
+matrix:
+  include:
+    # works on Precise and Trusty
+    - os: linux   
 addons: 
     apt: 
     sources: 
