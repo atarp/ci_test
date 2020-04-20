@@ -27,5 +27,23 @@ script:
 
 
 
+dist: trusty
+
+language: 
+    - cpp
+compiler: 
+    - gcc
+addons:
+    apt:
+    sources:
+     - ubuntu-toolchain-r-test
+    packages:
+     - g++-7    
+script:
+  - CXX=/usr/bin/g++-7 CC=/usr/bin/gcc-7 cmake .
+  - cmake --build . -- -j2
+
+          
+    
 
 
