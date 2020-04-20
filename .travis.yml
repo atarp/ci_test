@@ -1,5 +1,4 @@
 language: cpp
-sudo: required
 dist: bionic
 compiler:
 - g++
@@ -12,3 +11,4 @@ script:
 - g++ -c -std=c++14 md5.cpp -o md5.o 
 - g++ -std=c++14 md5.o -o md5 -lPocoFoundation
 
+# works 
