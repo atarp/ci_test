@@ -6,7 +6,9 @@ compiler:
   - gcc
 
 # the install step will take care of deploying a newer cmake version
-install:    
+install:
+  - apt-get update
+  - apt-get install -y libpoco-dev
   # first we create a directory for the CMake binaries
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
   - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
