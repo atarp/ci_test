@@ -37,7 +37,7 @@ before_script:
   # - cp ../conaninfo.txt ../conanbuildinfo.cmake ./ 
   # run cmake; here we assume that the project's
   # top-level CMakeLists.txt is located at '..'
-  - cmake . -DCMAKE_BUILD_TYPE=Release
+  - cmake ..
 
 script:
   # once CMake has done its job we just build using make as usual
