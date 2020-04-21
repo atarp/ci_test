@@ -43,7 +43,7 @@ message( "Conan_Libs: ${CONAN_LIBS}")
 
 add_compile_options(-Wall -Wextra -Wpedantic)
 
-add_executable(md5 main.cpp)
+add_executable(md5 md5.cpp)
 
 message( "Project_Options: ${project_options}")
 message( "Project_Warnings: ${project_warnings}")
