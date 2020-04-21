@@ -26,20 +26,21 @@ include(${CMAKE_BINARY_DIR}/conan.cmake)
 conan_add_remote(NAME bincrafters URL
                  https://api.bintray.com/conan/bincrafters/public-conan)
 
-conan_cmake_run(
-  REQUIRES
-  ${CONAN_EXTRA_REQUIRES}
-  OPTIONS
-  ${CONAN_EXTRA_OPTIONS}
-  BASIC_SETUP
-  CMAKE_TARGETS # individual targets to link to
-  BUILD
-  missing)
+#conan_cmake_run(
+#  REQUIRES
+#  ${CONAN_EXTRA_REQUIRES}
+#  OPTIONS
+#  ${CONAN_EXTRA_OPTIONS}
+#  BASIC_SETUP
+#  CMAKE_TARGETS # individual targets to link to
+#  BUILD
+#  missing)
 
+
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
 message( "Conan_Libs: ${CONAN_LIBS}")
 
-#include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-#conan_basic_setup()
 ###################################################################
 
 add_compile_options(-Wall -Wextra -Wpedantic)
