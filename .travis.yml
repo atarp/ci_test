@@ -7,8 +7,8 @@ compiler:
 
 # the install step will take care of deploying a newer cmake version
 install:
-  - sudo apt-get update
-  - sudo apt-get install -y libpoco-dev
+  # - sudo apt-get update
+  # - sudo apt-get install -y libpoco-dev
   # first we create a directory for the CMake binaries
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
   - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
@@ -34,7 +34,7 @@ before_script:
   - mkdir build
   # switch to build directory
   - cd build
-  - cp ../conaninfo.txt ../conanbuildinfo.cmake ./ 
+  # - cp ../conaninfo.txt ../conanbuildinfo.cmake ./ 
   # run cmake; here we assume that the project's
   # top-level CMakeLists.txt is located at '..'
   - cmake ..
