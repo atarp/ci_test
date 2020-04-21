@@ -34,7 +34,7 @@ before_script:
   - mkdir build
   # switch to build directory
   - cd build
-  # - cp ../utils/conaninfo.txt ../utils/conanbuildinfo.cmake ./ 
+  - cp ../utils/conaninfo.txt ../utils/conanbuildinfo.cmake ./ 
   # run cmake; here we assume that the project's
   # top-level CMakeLists.txt is located at '..'
   - cmake ..
