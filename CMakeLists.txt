@@ -16,8 +16,8 @@ if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
   message(
     STATUS
       "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
-  	#file(DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.13/conan.cmake"
-  	file(DOWNLOAD "https://raw.githubusercontent.com/conan-io/cmake-conan/develop/conan.cmake"
+  	file(DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.13/conan.cmake"
+  	#file(DOWNLOAD "https://raw.githubusercontent.com/conan-io/cmake-conan/develop/conan.cmake"
                                             "${CMAKE_BINARY_DIR}/conan.cmake")
 endif()
 
@@ -37,8 +37,8 @@ conan_cmake_run(
   missing)
 
 
-#include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-#conan_basic_setup()
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
 message( "Conan_Libs: ${CONAN_LIBS}")
 
 ###################################################################
