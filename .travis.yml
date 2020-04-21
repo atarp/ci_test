@@ -9,7 +9,6 @@ compiler:
 install:
   # - sudo apt-get update
   # - sudo apt-get install -y libpoco-dev
-  - sudo pip3 install --user conan  
   # first we create a directory for the CMake binaries
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
   - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
