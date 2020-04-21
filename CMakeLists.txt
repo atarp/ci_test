@@ -10,8 +10,7 @@ add_definitions("-std=c++11")
 #target_compile_definitions(project_options INTERFACE cxx_std_20)
 
 #########CONAN############################
-set(CONAN_EXTRA_REQUIRES ${CONAN_EXTRA_REQUIRES}
-                         poco/1.10.1)
+set(CONAN_EXTRA_REQUIRES ${CONAN_EXTRA_REQUIRES} poco/1.10.1)
 
 if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
   message(
@@ -37,7 +36,7 @@ conan_add_remote(NAME bincrafters URL
 #  missing)
 
 
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+#include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 message( "Conan_Libs: ${CONAN_LIBS}")
 
