@@ -11,8 +11,7 @@ install:
   - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
   - travis_retry wget --no-check-certificate https://cmake.org/files/v3.17/cmake-3.17.1-Linux-x86_64.tar.gz
   - cat cmake-3.17.1-Linux-x86_64.tar.gz|md5sum
-  #- echo "f3546812c11ce7f5d64dc132a566b749 *cmake-3.3.2-Linux-x86_64.tar.gz" > cmake_md5.txt
-  #- md5sum -c cmake_md5.txt
+  - sha256sum -c ${TRAVIS_BUILD_DIR}/test/cmake_sha256.txt
 
   - tar -xvf cmake-3.17.1-Linux-x86_64.tar.gz > /dev/null
   - mv cmake-3.17.1-Linux-x86_64 cmake-install
