@@ -30,6 +30,8 @@ install:
   - cd ${TRAVIS_BUILD_DIR}
   
 before_script:
+  - conan --version
+  - pip list
   # create a build folder for the out-of-source build
   - mkdir build
   # switch to build directory
