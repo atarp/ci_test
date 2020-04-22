@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-set(CMAKE_BUILD_TYPE  Release) 
-#  CACHE STRING "Choose the type of build." FORCE)
+set(CMAKE_BUILD_TYPE Debug  CACHE STRING "Choose the type of build." FORCE)
 
 project(MD5Encrypter)
 
@@ -10,14 +9,14 @@ add_definitions("-std=c++11")
 #target_compile_definitions(project_options INTERFACE cxx_std_20)
 
 #########CONAN############################
-set(CONAN_EXTRA_REQUIRES ${CONAN_EXTRA_REQUIRES}
-                         poco/1.10.1)
+set(CONAN_EXTRA_REQUIRES ${CONAN_EXTRA_REQUIRES} poco/1.10.1)
 
 if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
   message(
     STATUS
       "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
   	file(DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.13/conan.cmake"
+		#        file(DOWNLOAD "https://raw.githubusercontent.com/conan-io/cmake-conan/develop/conan.cmake"  
        		"${CMAKE_BINARY_DIR}/conan.cmake")
 endif()
 
@@ -38,8 +37,8 @@ conan_cmake_run(
 
 message( "Conan_Libs: ${CONAN_LIBS}")
 
-#include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-#conan_basic_setup()
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
 ###################################################################
 
 add_compile_options(-Wall -Wextra -Wpedantic)
