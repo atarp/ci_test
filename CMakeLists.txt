@@ -1,10 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
-<<<<<<< HEAD
-set(CMAKE_BUILD_TYPE Debug  CACHE STRING "Choose the type of build." FORCE)
-=======
 
-set(CMAKE_BUILD_TYPE  Debug) # CACHE STRING "Choose the type of build." FORCE)
->>>>>>> 1faef0a3a826219e03f6a90889b50fc6d1532d69
+set(CMAKE_BUILD_TYPE Debug  CACHE STRING "Choose the type of build." FORCE)
 
 project(MD5Encrypter)
 
@@ -21,13 +17,8 @@ if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
     STATUS
       "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
   	file(DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.13/conan.cmake"
-<<<<<<< HEAD
 		#        file(DOWNLOAD "https://raw.githubusercontent.com/conan-io/cmake-conan/develop/conan.cmake"  
        		"${CMAKE_BINARY_DIR}/conan.cmake")
-=======
-  	#file(DOWNLOAD "https://raw.githubusercontent.com/conan-io/cmake-conan/develop/conan.cmake"
-                                            "${CMAKE_BINARY_DIR}/conan.cmake")
->>>>>>> 1faef0a3a826219e03f6a90889b50fc6d1532d69
 endif()
 
 include(${CMAKE_BINARY_DIR}/conan.cmake)
@@ -45,24 +36,14 @@ conan_cmake_run(
   BUILD
   missing)
 
-
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
-message( "Conan_Libs: ${CONAN_LIBS}")
 
-<<<<<<< HEAD
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
-=======
->>>>>>> 1faef0a3a826219e03f6a90889b50fc6d1532d69
 ###################################################################
 
 add_compile_options(-Wall -Wextra -Wpedantic)
 
 add_executable(md5 md5.cpp)
-
-message( "Project_Options: ${project_options}")
-message( "Project_Warnings: ${project_warnings}")
 
 target_link_libraries(md5 ${CONAN_LIBS})
 
