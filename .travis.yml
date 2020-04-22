@@ -7,6 +7,7 @@ compiler:
 
 # the install step will take care of deploying a newer cmake version
 install:
+  - pip install conan
   # - sudo apt-get update
   # - sudo apt-get install -y libpoco-dev
   # first we create a directory for the CMake binaries
@@ -30,17 +31,19 @@ install:
   - cd ${TRAVIS_BUILD_DIR}
   
 before_script:
+  - conan --version
+  - pip list
   # create a build folder for the out-of-source build
   - mkdir build
   # switch to build directory
   - cd build
-  # - cp ../conaninfo.txt ../conanbuildinfo.cmake ./ 
+  # - cp ../utils/conaninfo.txt ../utils/conanbuildinfo.cmake ./ 
   # run cmake; here we assume that the project's
   # top-level CMakeLists.txt is located at '..'
   - cmake ..
 
 script:
   # once CMake has done its job we just build using make as usual
-  - make
+  - cmake --build .
   # if the project uses ctest we can run the tests like this
   #- make test 
